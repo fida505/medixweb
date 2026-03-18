@@ -1,0 +1,24 @@
+<svg width="1240" height="650" viewBox="0 0 1240 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1240" height="650" fill="#F0F9FF"/>
+  <circle cx="620" cy="325" r="300" fill="url(#paint0_radial)" fillOpacity="0.4"/>
+  <circle cx="620" cy="325" r="200" stroke="#5DA9C6" strokeWidth="2" strokeDasharray="10 10" opacity="0.3"/>
+  <circle cx="620" cy="325" r="100" stroke="#5DA9C6" strokeWidth="4" opacity="0.5"/>
+  
+  {/* Connected Nodes */}
+  <circle cx="620" cy="225" r="25" fill="#1E3A5F"/>
+  <circle cx="533" cy="375" r="25" fill="#1E3A5F"/>
+  <circle cx="707" cy="375" r="25" fill="#1E3A5F"/>
+  
+  <path d="M620 250V325M550 360L620 325M690 360L620 325" stroke="#1E3A5F" strokeWidth="3" strokeLinecap="round"/>
+  
+  {/* Abstract DNA/Particles */}
+  <circle cx="200" cy="150" r="100" fill="#5DA9C6" fillOpacity="0.1"/>
+  <circle cx="1040" cy="500" r="150" fill="#5DA9C6" fillOpacity="0.1"/>
+
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(620 325) rotate(90) scale(300)">
+      <stop stopColor="#5DA9C6"/>
+      <stop offset="1" stopColor="#5DA9C6" stopOpacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-primary-start: #5DA9C6;
+  --color-primary-end: #2F6F8F;
+  --color-primary-btn: #1E3A5F;
+  
+  --color-bg-light: #F5F9FC;
+  --color-heading: #1E3A5F;
+  --color-text-main: #6B7C93;
+
+  --font-sans: "Inter", sans-serif;
+  
+  --radius-card: 20px;
+  --radius-btn: 50px;
+  
+  --shadow-premium: 0 20px 50px rgba(0,0,0,0.1);
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
+
+  --spacing-section: 100px;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-text-main bg-white antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-heading leading-tight tracking-tight;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-[1440px] mx-auto px-8;
+  }
+
+  .glass-premium {
+    @apply backdrop-blur-[20px] bg-white/15 border border-white/20 shadow-soft;
+  }
+
+  .mask-fade-extreme {
+    mask-image: linear-gradient(to bottom, black 30%, transparent 95%),
+                linear-gradient(to left, black 60%, transparent 100%);
+    mask-composite: intersect;
+  }
+}
