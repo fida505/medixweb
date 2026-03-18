@@ -17,7 +17,7 @@ const ModelSection = () => {
           <span className="inline-flex items-center gap-2 text-[13px] font-bold text-[#1E3A5F60] uppercase tracking-[0.25em] mb-6">
             <span className="text-[22px] font-bold text-[#10B981]">+</span> APPROACH
           </span>
-          <h2 className="text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] tracking-tight mb-8">
+          <h2 className="text-[36px] md:text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] tracking-tight mb-8">
             The MedixWeb Total Care™ Model
           </h2>
           <p className="text-[17px] text-[#6B7C93] leading-[1.7] font-medium opacity-80 max-w-[650px] mx-auto">
@@ -55,8 +55,8 @@ const ModelSection = () => {
 
             {/* Bottom Summary Bar with Figma-accurate Gradient */}
             <div className="absolute bottom-0 left-0 right-0 p-8 pt-24 bg-gradient-to-t from-[#2F6F8F] via-[#2F6F8F90] to-transparent">
-               <div className="glass-premium p-10 rounded-[35px] border border-white/30 text-left max-w-[1100px] mx-auto shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
-                  <p className="text-[20px] font-bold text-white leading-relaxed">
+               <div className="glass-premium p-6 md:p-10 rounded-[30px] md:rounded-[35px] border border-white/30 text-left max-w-[1100px] mx-auto shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
+                  <p className="text-[16px] md:text-[20px] font-bold text-white leading-relaxed">
                     Our MedixWeb™ model unites doctors, specialists, and wellness experts in one place. From diagnostics to recovery, we ensure holistic healing and long-term wellness.
                   </p>
                </div>
@@ -73,9 +73,9 @@ const ModelSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="relative group p-[50px] rounded-[45px] bg-[#F8FAFC]/50 border border-gray-100 hover:bg-white hover:shadow-premium transition-all duration-500"
+              className="relative group p-8 md:p-[50px] rounded-[40px] md:rounded-[45px] bg-[#F8FAFC]/50 border border-gray-100 hover:bg-white hover:shadow-premium transition-all duration-500"
             >
-              <div className="text-[85px] font-black text-[#1E3A5F08] absolute -top-4 -left-2 leading-none group-hover:text-[#1E3A5F12] transition-colors">{item.step}</div>
+              <div className="text-[60px] md:text-[85px] font-black text-[#1E3A5F08] absolute -top-4 -left-2 leading-none group-hover:text-[#1E3A5F12] transition-colors">{item.step}</div>
               <div className="relative z-10 pt-4">
                 <h3 className="text-[28px] font-extrabold text-[#1E3A5F] mb-6 tracking-tight">{item.title}</h3>
                 <p className="text-[16px] text-[#6B7C93] font-bold leading-relaxed mb-10 opacity-70 group-hover:opacity-100 transition-opacity">

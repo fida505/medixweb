@@ -4,13 +4,13 @@ import Logo from './Logo';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1E3A5F] text-white pt-[100px] pb-[40px]">
+    <footer className="bg-[#1E3A5F] text-white pt-16 md:pt-[100px] pb-[40px]">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row justify-between mb-[80px] gap-16">
           
           {/* Newsletter Side */}
           <div className="lg:w-[40%]">
-            <h2 className="text-[48px] font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
+            <h2 className="text-[32px] md:text-[48px] font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
               Stay ahead of your <br /> health journey
             </h2>
             <p className="text-white/50 text-[14px] leading-relaxed font-medium mb-10 max-w-[380px]">

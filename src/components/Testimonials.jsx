@@ -47,7 +47,7 @@ const Testimonials = () => {
           <span className="inline-flex items-center gap-2 text-[13px] font-bold text-[#1E3A5F60] uppercase tracking-[0.25em] mb-6">
             <span className="text-[22px] font-bold text-[#10B981]">+</span> TESTIMONIALS
           </span>
-          <h2 className="text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] tracking-tight mb-8">
+          <h2 className="text-[36px] md:text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] tracking-tight mb-8">
             Real Stories, Real Healing — <br /> From Our Community
           </h2>
           <p className="text-[17px] text-[#6B7C93] leading-[1.7] font-medium opacity-80 max-w-[650px] mx-auto">
@@ -65,7 +65,7 @@ const Testimonials = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="w-full lg:w-[450px] min-h-[450px] rounded-[30px] overflow-hidden relative group shadow-soft flex flex-col"
+                className="w-full lg:max-w-[450px] min-h-[400px] md:min-h-[450px] rounded-[30px] overflow-hidden relative group shadow-soft flex flex-col"
               >
                 <img src={r.image} alt={r.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-[#1E3A5FB0] to-transparent text-white mt-auto z-10">
@@ -88,7 +88,7 @@ const Testimonials = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="w-full lg:w-[400px] bg-[#EBF4FF] p-10 rounded-[30px] flex flex-col justify-between min-h-[450px] border border-[#DEEBFB]"
+                className="w-full lg:max-w-[400px] bg-[#EBF4FF] p-8 md:p-10 rounded-[30px] flex flex-col justify-between min-h-[400px] md:min-h-[450px] border border-[#DEEBFB]"
               >
                 <div>
                   <div className="flex gap-4 mb-6">

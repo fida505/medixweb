@@ -50,11 +50,11 @@ const About = () => {
   return (
     <section id="about" className="relative w-full bg-white pt-[60px] pb-[60px] overflow-hidden">
       {/* Sharp Background DNA */}
-      <div className="absolute top-[5%] left-[0%] z-0 opacity-[0.9] pointer-events-none contrast-125 saturate-150">
+      <div className="absolute top-[5%] -left-[10%] md:left-0 z-0 opacity-[0.9] pointer-events-none contrast-125 saturate-150">
         <img 
           src={aboutImg} 
           alt=""
-          className="w-[1000px] h-auto object-contain"
+          className="w-[600px] md:w-[1000px] h-auto object-contain"
         />
       </div>
 
@@ -93,7 +93,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <div className="text-[72px] font-extrabold text-[#1E3A5F] leading-none tracking-tighter mb-4">
+                <div className="text-[54px] md:text-[72px] font-extrabold text-[#1E3A5F] leading-none tracking-tighter mb-4">
                   50+
                 </div>
                 <p className="text-[16px] text-[#6B7C93] font-bold leading-[1.6]">
@@ -116,7 +116,7 @@ const About = () => {
                   </div>
                </div>
 
-               <h2 className="text-[38px] leading-[1.2] font-extrabold text-[#1E3A5F] tracking-tight">
+               <h2 className="text-[28px] md:text-[38px] leading-[1.2] font-extrabold text-[#1E3A5F] tracking-tight text-center md:text-left">
                  MedixWeb Clinic connects doctors and patients effortlessly, providing smarter, safer, and compassionate healthcare from diagnosis to full recovery.
                </h2>
             </div>

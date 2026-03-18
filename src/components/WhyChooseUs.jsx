@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
             <span className="inline-flex items-center gap-2 text-[13px] font-bold text-[#1E3A5F60] uppercase tracking-[0.25em] mb-6">
               <span className="text-[22px] font-bold text-[#10B981]">+</span> WHY CHOSE US
             </span>
-            <h2 className="text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] tracking-tight">
+            <h2 className="text-[36px] md:text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] tracking-tight">
               A Simplified Path to <br /> Comprehensive Medical Care
             </h2>
           </div>
@@ -52,9 +52,9 @@ const WhyChooseUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-white p-[50px] rounded-[40px] border border-gray-100 shadow-soft hover:shadow-premium hover:-translate-y-2 transition-all duration-300 group"
+              className="bg-white p-8 md:p-[50px] rounded-[40px] border border-gray-100 shadow-soft hover:shadow-premium hover:-translate-y-2 transition-all duration-300 group"
             >
-              <div className="text-[13px] font-bold text-[#1E3A5F20] tracking-[0.2em] mb-[45px]">FEATURE 0{index + 1}</div>
+              <div className="text-[13px] font-bold text-[#1E3A5F20] tracking-[0.2em] mb-[30px] md:mb-[45px]">FEATURE 0{index + 1}</div>
               <div className="w-16 h-16 bg-[#1E3A5F05] rounded-[22px] flex items-center justify-center text-[#1E3A5F] mb-[35px] group-hover:bg-[#1E3A5F] group-hover:text-white transition-colors duration-300">
                 <feature.icon size={32} />
               </div>

@@ -29,12 +29,41 @@ const Hero = () => {
             <a href="#blog" className="opacity-80 hover:opacity-100 transition-all">Contact</a>
           </div>
 
-          <a href="#booking" className="bg-white text-[#1E3A5F] px-[32px] py-[14px] rounded-full font-bold text-[15px] flex items-center gap-3 shadow-premium hover:scale-105 transition-all">
-            Book Appointment
-            <div className="bg-[#1E3A5F] text-white rounded-full p-1">
-              <ArrowRight size={14} />
-            </div>
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="#booking" className="hidden sm:flex bg-white text-[#1E3A5F] px-[32px] py-[14px] rounded-full font-bold text-[15px] items-center gap-3 shadow-premium hover:scale-105 transition-all">
+              Book Appointment
+              <div className="bg-[#1E3A5F] text-white rounded-full p-1">
+                <ArrowRight size={14} />
+              </div>
+            </a>
+            
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-all"
+            >
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+
+          {/* Mobile Menu Overlay */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="absolute top-[80px] left-0 right-0 z-50 bg-[#1E3A5F] p-8 rounded-2xl border border-white/10 shadow-2xl lg:hidden flex flex-col gap-6 font-extrabold text-[18px]"
+              >
+                <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
+                <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+                <a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a>
+                <a href="#approach" onClick={() => setIsMenuOpen(false)}>Our Team</a>
+                <a href="#testimonials" onClick={() => setIsMenuOpen(false)}>Testimonials</a>
+                <a href="#blog" onClick={() => setIsMenuOpen(false)}>Contact</a>
+                <a href="#booking" onClick={() => setIsMenuOpen(false)} className="bg-white text-[#1E3A5F] p-4 rounded-xl text-center">Book Now</a>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.nav>
 
         {/* Hero Content */}
@@ -56,7 +85,7 @@ const Hero = () => {
               <span className="text-[14px] font-bold tracking-wide opacity-90">Trusted by 135k+ people</span>
             </div>
 
-            <h1 className="text-[72px] font-extrabold leading-[1.1] tracking-tight mb-4">
+            <h1 className="text-[42px] md:text-[60px] lg:text-[72px] font-extrabold leading-[1.1] tracking-tight mb-4">
               Your Trusted Partner in <br /> Modern <span className="text-white/90">Healthcare</span>
             </h1>
 
@@ -108,11 +137,11 @@ const Hero = () => {
                    initial={{ opacity: 0, y: 20, scale: 0.9 }}
                    animate={{ opacity: 1, y: 0, scale: 1 }}
                    transition={{ delay: 0.8, duration: 0.6 }}
-                   className="glass-premium p-[35px] rounded-[28px] w-[310px]"
+                   className="glass-premium p-6 md:p-[35px] rounded-[28px] w-full max-w-[310px]"
                 >
                   <div className="text-[13px] font-extrabold opacity-60 uppercase tracking-[0.15em] mb-4">Trusted Care Rate</div>
-                  <div className="text-[64px] font-extrabold leading-none mb-6">97%</div>
-                  <p className="text-[15px] leading-[1.6] opacity-80 font-medium tracking-tight">
+                  <div className="text-[48px] md:text-[64px] font-extrabold leading-none mb-6">97%</div>
+                  <p className="text-[14px] md:text-[15px] leading-[1.6] opacity-80 font-medium tracking-tight">
                     Our patients trust us and are consistently satisfied with our treatment & support.
                   </p>
                 </motion.div>
@@ -122,7 +151,7 @@ const Hero = () => {
                    initial={{ opacity: 0, y: 20, scale: 0.9 }}
                    animate={{ opacity: 1, y: 0, scale: 1 }}
                    transition={{ delay: 1, duration: 0.6 }}
-                   className="glass-premium p-[24px] rounded-[28px] w-[270px] grid grid-cols-2 gap-3"
+                   className="hidden md:grid glass-premium p-[24px] rounded-[28px] w-[270px] grid-cols-2 gap-3"
                 >
                   <motion.div 
                     animate={{ x: [0, 5, 0] }}

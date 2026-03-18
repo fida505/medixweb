@@ -31,7 +31,7 @@ const Booking = () => {
             initial={{ opacity: 0, x: 20 }} 
             animate={{ opacity: 1, x: 0 }} 
             exit={{ opacity: 0, x: -20 }}
-            className="flex flex-col xl:flex-row gap-16"
+            className="flex flex-col lg:flex-row gap-10 xl:gap-16"
           >
             {/* Calendar */}
             <div className="flex-1 max-w-[450px]">
@@ -232,14 +232,14 @@ const Booking = () => {
   const stepTitles = ["Schedule", "Information", "Payment", "Success"];
 
   return (
-    <section id="booking" className="py-[120px] bg-[#F8FAFC] scroll-mt-20">
+    <section id="booking" className="py-12 md:py-[120px] bg-[#F8FAFC] scroll-mt-20">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row justify-between mb-16 gap-12">
           <div className="max-w-[600px]">
             <span className="inline-flex items-center gap-2 text-[13px] font-bold text-[#1E3A5F60] uppercase tracking-[0.25em] mb-6">
               <span className="text-[22px] font-bold text-[#10B981]">+</span> BOOK NOW
             </span>
-            <h2 className="text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] mb-8 tracking-tighter">
+            <h2 className="text-[36px] md:text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] mb-8 tracking-tighter">
               Stronger Together <br /> for Your Health
             </h2>
           </div>
@@ -282,7 +282,7 @@ const Booking = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-[40px] shadow-premium border border-gray-100 p-10 min-h-[550px] flex flex-col justify-center">
+        <div className="bg-white rounded-[40px] shadow-premium border border-gray-100 p-6 md:p-10 min-h-[550px] flex flex-col justify-center">
           <AnimatePresence mode="wait">
             {renderStep()}
           </AnimatePresence>

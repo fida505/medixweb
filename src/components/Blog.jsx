@@ -34,7 +34,7 @@ const Blog = () => {
             <span className="inline-flex items-center gap-2 text-[13px] font-bold text-[#1E3A5F60] uppercase tracking-[0.25em] mb-6">
               <span className="text-[22px] font-bold text-[#10B981]">+</span> BLOG
             </span>
-            <h2 className="text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] tracking-tight">
+            <h2 className="text-[36px] md:text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] tracking-tight">
               Explore Expert Insights for a <br /> Healthier, Happier Life
             </h2>
           </div>
