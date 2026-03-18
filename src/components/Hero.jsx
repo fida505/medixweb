@@ -1,10 +1,11 @@
-import React from 'react';
-import { ArrowRight, Star, Plus } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { ArrowRight, Star, Plus, Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Logo from './Logo';
 import heroImg from '../assets/hero.png';
 
 const Hero = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div id="home" className="bg-white pt-[15px] pb-[60px] px-[20px] flex justify-center scroll-mt-20">
       <section 
