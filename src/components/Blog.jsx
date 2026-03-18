@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import whyChooseUsImg from '../assets/why-choose-us.png';
 
 const Blog = () => {
   const posts = [
@@ -13,7 +14,7 @@ const Blog = () => {
     {
       title: "Top Benefits of Regular Health Checkups.",
       desc: "Discover how routine health checkups help detect issues early, prevent serious diseases, and promote long-term physical and mental wellness.",
-      image: "/src/assets/why-choose-us.png",
+      image: whyChooseUsImg,
       date: "Jan 25, 2025"
     },
     {

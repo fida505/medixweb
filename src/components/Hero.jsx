@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Star, Plus } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Logo from './Logo';
+import heroImg from '../assets/hero.png';
 
 const Hero = () => {
   return (
@@ -94,7 +95,7 @@ const Hero = () => {
               className="relative w-full lg:w-[850px] aspect-square lg:aspect-auto select-none"
             >
               <img 
-                src="/src/assets/hero.png" 
+                src={heroImg} 
                 alt="Healthcare" 
                 className="w-full h-full object-contain object-bottom mask-fade-extreme"
               />

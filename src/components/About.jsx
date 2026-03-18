@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Shield, ArrowRight } from 'lucide-react';
+import aboutImg from '../assets/about.png';
 
 const DoctorAnimation = () => (
   <motion.div 
@@ -51,7 +52,7 @@ const About = () => {
       {/* Sharp Background DNA */}
       <div className="absolute top-[5%] left-[0%] z-0 opacity-[0.9] pointer-events-none contrast-125 saturate-150">
         <img 
-          src="/src/assets/about.png" 
+          src={aboutImg} 
           alt=""
           className="w-[1000px] h-auto object-contain"
         />
