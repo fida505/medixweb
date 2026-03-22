@@ -31,53 +31,77 @@ const Booking = () => {
             initial={{ opacity: 0, x: 20 }} 
             animate={{ opacity: 1, x: 0 }} 
             exit={{ opacity: 0, x: -20 }}
-            className="flex flex-col lg:flex-row gap-10 xl:gap-16"
+            className="flex flex-col lg:flex-row gap-10 xl:gap-20 items-start"
           >
-            {/* Calendar */}
-            <div className="flex-1 max-w-[450px]">
-              <div className="flex items-center justify-between mb-8 px-4">
-                <h5 className="text-[16px] font-black text-[#1E3A5F]">April, 2025</h5>
-                <div className="flex gap-4">
-                  <button className="p-2 hover:bg-gray-50 rounded-lg transition-all"><ChevronLeft size={18} /></button>
-                  <button className="p-2 hover:bg-gray-50 rounded-lg transition-all"><ChevronRight size={18} /></button>
+            {/* Calendar Container */}
+            <div className="flex-1 max-w-[420px] bg-white border border-gray-100 rounded-[20px] p-6 shadow-sm">
+              <div className="flex items-center justify-between mb-6">
+                <h5 className="text-[15px] font-bold text-[#1E3A5F]">April,2021</h5>
+                <div className="flex gap-6">
+                  <button className="text-[#1E3A5F] hover:text-[#5DA9C6] transition-colors"><ChevronLeft size={18} /></button>
+                  <button className="text-[#1E3A5F] hover:text-[#5DA9C6] transition-colors"><ChevronRight size={18} /></button>
                 </div>
               </div>
-              <div className="grid grid-cols-7 gap-2">
-                {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map(day => (
-                  <div key={day} className="h-10 flex items-center justify-center text-[10px] font-black text-[#1E3A5F30] uppercase">
+              
+              <div className="grid grid-cols-7 gap-0.5 text-center">
+                {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
+                  <div key={day} className="h-10 flex items-center justify-center text-[10px] font-bold text-[#1E3A5F]">
                     {day}
                   </div>
                 ))}
+                
+                {/* Previous month days */}
+                {[29, 30, 31].map(day => (
+                  <div key={day} className="h-12 flex items-center justify-center text-[13px] font-medium text-gray-300">
+                    {day}
+                  </div>
+                ))}
+                
+                {/* Current month days */}
                 {Array.from({ length: 30 }).map((_, i) => {
                   const day = i + 1;
                   const isSelected = day === selectedDate;
+                  const isSoftHighlight = day >= 19 && day <= 28;
                   return (
                     <button 
-                      key={i}
+                      key={day}
                       onClick={() => setSelectedDate(day)}
-                      className={`h-11 w-11 rounded-xl flex items-center justify-center text-[13px] font-bold transition-all ${
-                        isSelected ? 'bg-[#1E3A5F] text-white shadow-lg' : 'hover:bg-gray-50 text-[#1E3A5F]'
+                      className={`h-12 w-full flex items-center justify-center text-[13px] font-bold transition-all relative ${
+                        isSelected 
+                          ? 'text-[#1E3A5F] bg-gray-50' 
+                          : isSoftHighlight
+                            ? 'text-[#1E3A5F] bg-gray-50/50'
+                            : 'text-[#1E3A5F] hover:bg-gray-50'
                       }`}
                     >
                       {day}
+                      {isSelected && <div className="absolute bottom-2 w-1.5 h-1.5 rounded-full bg-[#1E3A5F]" />}
                     </button>
                   );
                 })}
+
+                {/* Next month days */}
+                {[1, 2].map(day => (
+                  <div key={day} className="h-12 flex items-center justify-center text-[13px] font-medium text-gray-300">
+                    {day}
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Slots */}
+            {/* Slots Container */}
             <div className="flex-1">
-              <h5 className="text-[14px] font-black uppercase text-[#1E3A5F30] mb-8 tracking-widest">Available Slots</h5>
-              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-4">
                 {timeSlots.map(time => {
                   const isSelected = time === selectedTime;
                   return (
                     <button 
                       key={time}
                       onClick={() => setSelectedTime(time)}
-                      className={`py-4 rounded-xl text-[13px] font-black transition-all border ${
-                        isSelected ? 'bg-[#1E3A5F] text-white border-transparent' : 'bg-white text-[#1E3A5F60] border-gray-100 hover:border-[#1E3A5F20]'
+                      className={`w-[180px] py-4 rounded-[12px] text-[15px] font-medium transition-all border ${
+                        isSelected 
+                          ? 'bg-gray-100 text-[#1E3A5F] border-transparent' 
+                          : 'bg-white text-[#1E3A5F] border-gray-100 hover:border-gray-200 shadow-sm'
                       }`}
                     >
                       {time}
@@ -85,12 +109,19 @@ const Booking = () => {
                   );
                 })}
               </div>
-              <div className="mt-12 flex justify-end gap-6 pt-10 border-t border-gray-100">
+
+              {/* Action Buttons */}
+              <div className="mt-12 flex justify-end items-center gap-6">
+                <button 
+                  className="px-10 py-4 rounded-full text-[15px] font-bold text-gray-400 bg-[#f9fafb] hover:bg-gray-100 transition-all"
+                >
+                  Cancel
+                </button>
                 <button 
                   onClick={nextStep}
-                  className="bg-[#1E3A5F] text-white px-12 py-5 rounded-full font-black text-[15px] shadow-premium hover:scale-105 transition-all"
+                  className="bg-[#2F6F8F] text-white px-10 py-4 rounded-full font-bold text-[15px] shadow-premium hover:bg-[#255a75] transition-all"
                 >
-                  Continue
+                  Book Appointment
                 </button>
               </div>
             </div>
@@ -232,60 +263,66 @@ const Booking = () => {
   const stepTitles = ["Schedule", "Information", "Payment", "Success"];
 
   return (
-    <section id="booking" className="py-12 md:py-[120px] bg-[#F8FAFC] scroll-mt-20">
-      <div className="container-custom">
-        <div className="flex flex-col lg:flex-row justify-between mb-16 gap-12">
-          <div className="max-w-[600px]">
-            <span className="inline-flex items-center gap-2 text-[13px] font-bold text-[#1E3A5F60] uppercase tracking-[0.25em] mb-6">
-              <span className="text-[22px] font-bold text-[#10B981]">+</span> BOOK NOW
-            </span>
-            <h2 className="text-[36px] md:text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] mb-8 tracking-tighter">
-              Stronger Together <br /> for Your Health
-            </h2>
-          </div>
-
-          <div className="flex flex-col gap-4 min-w-[320px]">
-             {/* Contact Cards */}
-             <div className="bg-white p-5 rounded-[22px] shadow-sm border border-gray-100 flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-[#1E3A5F08] flex items-center justify-center text-[#1E3A5F]">
-                <MapPin size={18} />
-              </div>
-              <div>
-                <p className="text-[10px] font-black text-[#1E3A5F40] uppercase tracking-widest mb-0.5">Medical Location</p>
-                <p className="text-[14px] font-bold text-[#1E3A5F]">Silk St, Barbican, London EC2Y</p>
-              </div>
-            </div>
+    <section id="booking" className="min-h-[1174px] flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-white via-white/35 to-[#8AC0D8]">
+      <div className="w-full max-w-[1708px] mx-auto px-[4%] py-20">
+        
+        {/* Main Card - Literal 1443px x 928.64px */}
+        <div className="bg-white rounded-[41px] shadow-premium border border-[#EDEDED] w-full max-w-[1443px] min-h-[928px] mx-auto p-[60px] md:p-[80px] flex flex-col items-center">
+          
+          {/* Top Header & Location Cluster - Literal 1306.72px x 287.02px */}
+          <div className="w-full max-w-[1306.72px] h-[287.02px] mx-auto flex flex-col lg:flex-row justify-between mb-12 gap-12 items-start">
             
-            <div className="bg-white p-5 rounded-[22px] shadow-sm border border-gray-100 flex items-center gap-4 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-[#1E3A5F08] flex items-center justify-center text-[#1E3A5F]">
-                <Phone size={18} />
-              </div>
+            {/* Booking Content - Literal 598.56px x 287.02px */}
+            <div className="w-full lg:w-[598.56px] h-full flex flex-col justify-start gap-[26.65px]">
               <div>
-                <p className="text-[10px] font-black text-[#1E3A5F40] uppercase tracking-widest mb-0.5">Medical Location</p>
-                <p className="text-[14px] font-bold text-[#1E3A5F]">+91 87876 53652</p>
+                <span className="inline-flex items-center gap-2.5 text-[14px] font-black text-[#5DA9C6] uppercase tracking-[0.2em] mb-6">
+                  <span className="text-[18px] font-bold">+</span>
+                  Book Now
+                </span>
+                <h2 className="text-[34px] md:text-[52px] font-medium text-[#2F6F8F] leading-[1.1] mb-8 tracking-tight">
+                  Stronger Together <br /> for Your Health
+                </h2>
+                <p className="text-[18px] text-[#6B7C93] leading-[1.8] font-medium opacity-80">
+                  Begin your wellness journey today! Discover personalized support & vibrant living options tailored to enhance your loved one's health & happiness.
+                </p>
               </div>
             </div>
 
-             {/* Dynamic progress tracker */}
-             <div className="bg-[#1E3A5F] p-6 rounded-[24px] shadow-lg text-white">
-               <div className="flex justify-between mb-3">
-                 <span className="text-[10px] font-black uppercase text-white/40 tracking-widest">Process</span>
-                 <span className="text-[10px] font-black text-white uppercase">Step {step + 1} of 4</span>
-               </div>
-               <div className="flex gap-1.5 mb-3">
-                 {[0, 1, 2, 3].map(i => (
-                   <div key={i} className={`h-1 flex-1 rounded-full transition-all duration-500 ${i <= step ? 'bg-white' : 'bg-white/10'}`} />
-                 ))}
-               </div>
-               <p className="text-[16px] font-black">{stepTitles[step]}</p>
-             </div>
+            {/* Location Info Container - Literal 462.24px x 245.98px */}
+            <div className="w-full lg:w-[462.24px] h-[245.98px] bg-[#f9fafb] rounded-[16.4px] border-[1.43px] border-[#DADADA] p-8 flex flex-col justify-center gap-8">
+               {/* Contact Items */}
+               <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-[#2F6F8F] shadow-sm border border-gray-100">
+                    <MapPin size={22} />
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-black text-[#1E3A5F40] uppercase tracking-widest mb-1">Medical Location</p>
+                    <p className="text-[16px] font-bold text-[#1E3A5F]">Silk St, Barbican, London EC2Y</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-[#2F6F8F] shadow-sm border border-gray-100">
+                    <Phone size={22} />
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-black text-[#1E3A5F40] uppercase tracking-widest mb-1">Medical Location</p>
+                    <p className="text-[16px] font-bold text-[#1E3A5F]">+91 87876 53652</p>
+                  </div>
+                </div>
+            </div>
           </div>
-        </div>
 
-        <div className="bg-white rounded-[40px] shadow-premium border border-gray-100 p-6 md:p-10 min-h-[550px] flex flex-col justify-center">
-          <AnimatePresence mode="wait">
-            {renderStep()}
-          </AnimatePresence>
+          {/* Calendar Card - Literal 1306.46px x 539.60px */}
+          <div className="w-full max-w-[1306.46px] min-h-[539.60px] mx-auto bg-white rounded-[21.51px] border-[1.31px] border-[#DADADA] p-10 md:p-14">
+            <h5 className="text-[18px] font-bold text-[#2F6F8F] mb-10">Pick a Date and time for appointment</h5>
+            <div className="h-full">
+              <AnimatePresence mode="wait">
+                {renderStep()}
+              </AnimatePresence>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -13,117 +13,95 @@ const WhyChooseUs = () => {
     "Excellence"
   ];
 
-  // Placeholder for features array, as it was not present in the original code
-  // and is required by the provided edit.
-  // Assuming 'features' would be an array of objects like:
-  // { icon: SomeIconComponent, title: string, desc: string }
-  const features = [
-    { icon: Plus, title: "Expert Guidance", desc: "Benefit from the knowledge of leading medical professionals." },
-    { icon: Plus, title: "Innovative Solutions", desc: "Access cutting-edge treatments and technologies." },
-    { icon: Plus, title: "Personalized Support", desc: "Receive care tailored to your unique health journey." },
-  ];
 
   return (
-    <section id="why-choose-us" className="pt-[60px] pb-[60px] bg-white overflow-hidden relative">
-      <div className="container-custom">
+    <section id="why-choose-us" className="section-padding bg-white overflow-hidden relative">
+      <div className="w-full px-[4%]">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-[70px] gap-8">
           <div className="max-w-[800px]">
-            <span className="inline-flex items-center gap-2 text-[13px] font-bold text-[#1E3A5F60] uppercase tracking-[0.25em] mb-6">
-              <span className="text-[22px] font-bold text-[#10B981]">+</span> WHY CHOSE US
+            <span className="inline-flex items-center gap-2.5 text-[14px] font-black text-[#5DA9C6] uppercase tracking-[0.2em] mb-6">
+              <span className="text-[18px] font-bold">+</span>
+              WHY CHOOSE US
             </span>
-            <h2 className="text-[36px] md:text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] tracking-tight">
+            <h2 className="text-[34px] md:text-[48px] font-bold text-[#2F6F8F] leading-[1.2] tracking-tight">
               A Simplified Path to <br /> Comprehensive Medical Care
             </h2>
           </div>
-          <div className="max-w-[420px] lg:pt-16">
-            <p className="text-[17px] text-[#6B7C93] leading-[1.7] font-medium opacity-80">
+          <div className="max-w-[600px] lg:pt-20">
+            <p className="text-[18px] text-[#2F6F8F] leading-[1.7] font-bold opacity-90">
               Providing patient-centered care through expert guidance, innovative solutions, and personalized support every step of the way.
             </p>
           </div>
         </div>
 
-        {/* Feature Cards Section - Added */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] mb-[70px]"> {/* Added margin-bottom for spacing */}
-          {features.map((feature, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-white p-8 md:p-[50px] rounded-[40px] border border-gray-100 shadow-soft hover:shadow-premium hover:-translate-y-2 transition-all duration-300 group"
-            >
-              <div className="text-[13px] font-bold text-[#1E3A5F20] tracking-[0.2em] mb-[30px] md:mb-[45px]">FEATURE 0{index + 1}</div>
-              <div className="w-16 h-16 bg-[#1E3A5F05] rounded-[22px] flex items-center justify-center text-[#1E3A5F] mb-[35px] group-hover:bg-[#1E3A5F] group-hover:text-white transition-colors duration-300">
-                <feature.icon size={32} />
-              </div>
-              <h3 className="text-[24px] font-extrabold text-[#1E3A5F] mb-[20px]">{feature.title}</h3>
-              <p className="text-[16px] text-[#6B7C93] font-medium leading-relaxed opacity-80">{feature.desc}</p>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Main Content Layout */}
-        <div className="flex flex-col lg:flex-row gap-[40px] items-stretch min-h-[600px]">
+        <div className="flex flex-col lg:flex-row gap-[40px] items-stretch">
           
           {/* Left: Values List Sidebar */}
-          <div className="w-full lg:w-[320px] flex flex-col justify-between py-4">
+          <div className="w-full lg:w-[480px] flex flex-col justify-between py-4 min-h-[569px]">
             <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-8">
-                <span className="text-[14px] font-black text-[#1E3A5F] uppercase tracking-widest">Values List</span>
-                <span className="text-[14px] font-bold text-[#1E3A5F40]">01/05</span>
+              <div className="flex items-center justify-between border-b border-[#D1D5DB] pb-4 mb-4">
+                <span className="text-[20px] font-bold text-[#5DA9C6]">Values List</span>
+                <span className="text-[14px] font-bold text-[#1E3A5F]">02/05</span>
               </div>
               
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col">
                 {values.map((v) => (
-                  <button 
-                    key={v}
-                    onClick={() => setActiveValue(v)}
-                    className={`text-[20px] font-extrabold text-left transition-all hover:translate-x-2 ${
-                      activeValue === v ? 'text-[#5DA9C6] translate-x-2' : 'text-[#1E3A5F30]'
-                    }`}
-                  >
-                    {v}
-                  </button>
+                  <div key={v} className="border-b border-[#D1D5DB] last:border-0 py-4">
+                    <button 
+                      onClick={() => setActiveValue(v)}
+                      className={`text-left transition-all duration-500 hover:translate-x-3 w-full ${
+                        activeValue === v 
+                          ? 'text-[32px] md:text-[38px] font-medium text-[#2F6F8F]' 
+                          : 'text-[22px] md:text-[26px] font-normal text-[#1E3A5F40]'
+                      }`}
+                    >
+                      {v}
+                    </button>
+                  </div>
                 ))}
               </div>
             </div>
 
-            <button className="bg-[#1E3A5F] text-white px-[40px] py-[18px] rounded-full font-bold text-[15px] flex items-center gap-3 shadow-premium w-fit mt-12 hover:scale-105 transition-all">
-              Book Appointment
-              <div className="bg-white/20 rounded-full p-1.5">
-                <ArrowRight size={14} />
-              </div>
-            </button>
+            <div className="mt-16">
+              <button className="bg-[#4E9ABC] text-white px-[45px] py-[18px] rounded-full flex items-center gap-4 font-bold text-[15px] shadow-premium hover:bg-[#3d7a96] transition-all group">
+                Book Appointment
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#4E9ABC] group-hover:translate-x-1 transition-transform">
+                  <ArrowRight size={18} />
+                </div>
+              </button>
+            </div>
           </div>
 
-          {/* Center: Main Portrait Card */}
-          <div className="flex-1 relative">
-            <div className="rounded-[40px] overflow-hidden bg-gray-100 h-full relative group">
+          {/* Right side cluster: 1080px total (525 + 30 + 525) */}
+          <div className="flex-1 flex flex-col lg:flex-row gap-[30px] items-stretch">
+            {/* Image Card */}
+            <div className="w-full lg:w-[525px] h-[569px] rounded-[24px] overflow-hidden bg-gray-100 relative group shadow-soft">
               <img 
-                src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&q=80&w=1000" 
+                src="https://images.unsplash.com/photo-1576091160550-217359f42f8c?q=80&w=2070&auto=format&fit=crop" 
                 alt="Expert Medical Consultation"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
-          </div>
 
-          {/* Right: Info Cluster Card */}
-          <div className="w-full lg:w-[420px] flex flex-col gap-6">
-            <div className="flex-1 bg-[#2F6F8F] rounded-[40px] p-[50px] text-white flex flex-col justify-between shadow-soft relative overflow-hidden group">
+            {/* Info Cluster Card */}
+            <div className="w-full lg:w-[525px] h-[569px] bg-gradient-to-b from-[#4E9ABC] to-[#2F6F8F] rounded-[24px] p-[32px] text-white flex flex-col justify-between shadow-premium relative overflow-hidden group">
               {/* Subtle light effect */}
-              <div className="absolute -top-20 -right-20 w-80 h-80 bg-white/10 blur-[80px] rounded-full group-hover:scale-110 transition-transform" />
+              <div className="absolute -top-40 -right-40 w-[400px] h-[400px] bg-white/10 blur-[120px] rounded-full group-hover:scale-110 transition-transform" />
               
-              <p className="text-[28px] font-extrabold leading-[1.4] relative z-10">
-                "We’re committed to delivering the highest standard of medical care with sensitivity."
-              </p>
+              <div className="relative z-10">
+                <p className="text-[28px] md:text-[32px] font-bold leading-[1.2] tracking-[-0.01em]">
+                  We’re committed to delivering the highest standard of medical care with sensitivity.
+                </p>
+              </div>
 
               <div className="grid grid-cols-2 gap-3 relative z-10">
                 {values.map(v => (
-                  <div key={v} className="bg-white/10 backdrop-blur-md rounded-full py-3 px-4 flex items-center justify-between border border-white/10 text-[13px] font-bold">
-                    {v}
-                    <Plus size={14} className="rotate-45 opacity-50" />
+                  <div key={v} className="w-full bg-black/30 backdrop-blur-xl rounded-full py-4 text-center flex items-center justify-center border border-white/10 text-[14px] font-bold tracking-[0.05em] uppercase relative">
+                    <span className="px-6">{v}</span>
+                    <Plus size={16} className="rotate-45 text-white/90 absolute right-5" />
                   </div>
                 ))}
               </div>

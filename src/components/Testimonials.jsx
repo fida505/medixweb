@@ -6,79 +6,72 @@ const Testimonials = () => {
   const reviews = [
     {
       id: 1,
-      title: "Friendly staff review",
-      text: "The team made every step stress-free and supportive. I finally feel confident about my treatment.",
+      title: "Friendly stall review",
+      text: "The team made every step stress-free and supportive. I finally feel confident about my treatment. The team made every step stress-free.",
       name: "Robert Fox",
       role: "Regular Tester",
       image: "https://i.pravatar.cc/150?u=fox",
-      type: "card"
+      width: "571px"
     },
     {
       id: 2,
       name: "Cody Fisher",
       role: "Regular Tester",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600",
-      type: "portrait"
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2??auto=format&fit=crop&q=80&w=600",
+      width: "428px",
+      type: "checker"
     },
     {
       id: 3,
-      title: "Seamless experience",
-      text: "The team made every step stress-free and supportive. I finally feel confident about my treatment.",
-      name: "Albert Flores",
+      title: "Friendly stall review",
+      text: "The team made every step stress-free and supportive. I finally feel confident about my treatment. The team made every step stress-free.",
+      name: "Robert Fox",
       role: "Regular Tester",
-      image: "https://i.pravatar.cc/150?u=flores",
-      type: "card"
+      image: "https://i.pravatar.cc/150?u=fox",
+      width: "571px"
     }
   ];
 
-  const SocialIcons = () => (
-    <div className="flex gap-2 opacity-50">
-      <Facebook size={12} fill="currentColor" />
-      <Twitter size={12} fill="currentColor" />
-      <Youtube size={12} fill="currentColor" />
-    </div>
-  );
-
   return (
-    <section id="testimonials" className="pt-[60px] pb-[120px] bg-white">
-      <div className="container-custom">
+    <section id="testimonials" className="section-padding bg-white overflow-hidden">
+      <div className="max-w-[1728px] mx-auto min-h-[960px] flex flex-col items-center justify-center px-[4%]">
+        
         {/* Section Header */}
-        <div className="text-center mb-[70px]">
-          <span className="inline-flex items-center gap-2 text-[13px] font-bold text-[#1E3A5F60] uppercase tracking-[0.25em] mb-6">
-            <span className="text-[22px] font-bold text-[#10B981]">+</span> TESTIMONIALS
+        <div className="text-center mb-[80px]">
+          <span className="inline-flex items-center gap-2.5 text-[14px] font-black text-[#5DA9C6] uppercase tracking-[0.2em] mb-6">
+            <span className="text-[18px] font-bold">+</span>
+            TESTIMONIALS
           </span>
-          <h2 className="text-[36px] md:text-[52px] font-extrabold text-[#1E3A5F] leading-[1.1] tracking-tight mb-8">
-            Real Stories, Real Healing — <br /> From Our Community
+          <h2 className="text-[34px] md:text-[52px] font-medium text-[#2F6F8F] leading-[1.1] tracking-tight mb-8">
+            The MedixWeb Total Care Model <br /> Our Community
           </h2>
-          <p className="text-[17px] text-[#6B7C93] leading-[1.7] font-medium opacity-80 max-w-[650px] mx-auto">
-            Providing patient-centered care through expert guidance, innovative solutions, and personalized support every step of the way.
+          <p className="text-[18px] text-[#6B7C93] leading-[1.8] font-medium opacity-80 max-w-[800px] mx-auto">
+            Providing patient-centered care through expert guidance, innovative solutions, and personalized support every step of the way. We ensure holistic healing and wellness.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 max-w-[1400px] mx-auto px-4">
+        {/* Testimonials Grid - Literal 1618px Cluster */}
+        <div className="flex flex-col lg:flex-row items-stretch justify-center gap-[24px] w-full max-w-[1618px] mx-auto">
           {reviews.map((r) => (
-            r.type === "portrait" ? (
+            r.type === "checker" ? (
               <motion.div 
                 key={r.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="w-full lg:max-w-[450px] min-h-[400px] md:min-h-[450px] rounded-[30px] overflow-hidden relative group shadow-soft flex flex-col"
+                className="w-full lg:w-[428px] h-[493px] rounded-[20px] overflow-hidden relative group border-2 border-gray-100 flex flex-col bg-gradient-to-b from-[#f0f4f8] to-[#5DA9C6]"
               >
-                <img src={r.image} alt={r.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-[#1E3A5FB0] to-transparent text-white mt-auto z-10">
-                  <div className="flex items-end justify-between uppercase">
-                    <div>
-                      <div className="flex gap-1 mb-2">
-                        {[...Array(5)].map((_, i) => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/40" />)}
-                      </div>
-                      <h4 className="font-extrabold text-[22px]">{r.name}</h4>
-                      <p className="text-[11px] font-bold opacity-60 mt-1">{r.role}</p>
-                    </div>
-                    <SocialIcons />
-                  </div>
+                {/* Checkerboard Background Pattern for high-fidelity parity */}
+                <div className="absolute inset-0 z-0 opacity-40" style={{ 
+                  backgroundImage: 'radial-gradient(#d1dae5 1px, transparent 1px)', 
+                  backgroundSize: '30px 30px' 
+                }} />
+                
+                <img src={r.image} alt={r.name} className="absolute inset-x-0 bottom-0 w-full h-[60%] object-cover group-hover:scale-105 transition-transform duration-700 mix-blend-multiply opacity-80" />
+                
+                <div className="absolute inset-x-0 bottom-0 p-8 text-white z-10">
+                  <h4 className="font-bold text-[20px]">{r.name}</h4>
+                  <p className="text-[12px] opacity-80 font-bold uppercase tracking-wider">{r.role}</p>
                 </div>
               </motion.div>
             ) : (
@@ -87,29 +80,21 @@ const Testimonials = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="w-full lg:max-w-[400px] bg-[#EBF4FF] p-8 md:p-10 rounded-[30px] flex flex-col justify-between min-h-[400px] md:min-h-[450px] border border-[#DEEBFB]"
+                className={`w-full lg:w-[571px] h-[493px] bg-white p-[45px] rounded-[20px] flex flex-col justify-between border-2 border-gray-50 shadow-soft hover:translate-y-[-5px] transition-all`}
               >
                 <div>
-                  <div className="flex gap-4 mb-6">
-                    <span className="px-3 py-1 bg-white/50 text-[10px] font-bold text-[#2F6F8F] rounded-full uppercase tracking-wider">Verified</span>
-                    <span className="px-3 py-1 bg-white/50 text-[10px] font-bold text-[#2F6F8F] rounded-full uppercase tracking-wider">Health Care</span>
-                  </div>
-                  <h4 className="text-[20px] font-extrabold text-[#1E3A5F] mb-4">{r.title}</h4>
-                  <p className="text-[#6B7C93] text-[16px] leading-relaxed font-medium">
+                  <h3 className="text-[24px] font-bold text-[#2F6F8F] mb-6 tracking-tight">{r.title}</h3>
+                  <p className="text-[#6B7C93] text-[18px] leading-[1.7] font-medium opacity-90">
                     {r.text}
                   </p>
                 </div>
                 
-                <div className="flex items-center justify-between mt-8 border-t border-[#DEEBFB] pt-8 uppercase">
-                  <div className="flex items-center gap-3">
-                    <img src={r.image} alt={r.name} className="w-12 h-12 rounded-xl object-contain bg-white p-1" />
-                    <div>
-                      <h5 className="font-extrabold text-[14px] text-[#1E3A5F]">{r.name}</h5>
-                      <p className="text-[10px] font-black text-[#1E3A5F40] mt-0.5">{r.role}</p>
-                    </div>
+                <div className="flex items-center gap-4 mt-8">
+                  <img src={r.image} alt={r.name} className="w-16 h-16 rounded-[12px] object-cover bg-white p-0.5 shadow-sm" />
+                  <div>
+                    <h5 className="font-bold text-[18px] text-[#2F6F8F] tracking-tight">{r.name}</h5>
+                    <p className="text-[12px] font-bold text-[#1E3A5F40] uppercase tracking-wider">{r.role}</p>
                   </div>
-                  <SocialIcons />
                 </div>
               </motion.div>
             )

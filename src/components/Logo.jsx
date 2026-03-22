@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Logo = ({ dark = false, className = "" }) => {
+const Logo = ({ dark = false, className = "", showText = true }) => {
   return (
     <div className={`flex items-center gap-[12px] ${className}`}>
       <div className={`w-[42px] h-[42px] rounded-full flex items-center justify-center transition-all ${dark ? 'bg-white' : 'bg-[#1E3A5F]'}`}>
@@ -10,9 +10,11 @@ const Logo = ({ dark = false, className = "" }) => {
           <circle cx="15" cy="9" r="1.5" fill={dark ? "#1E3A5F" : "white"} fillOpacity="0.5" />
         </svg>
       </div>
-      <span className={`text-[28px] font-extrabold tracking-tighter ${dark ? 'text-white' : 'text-[#1E3A5F]'}`}>
-        MedixWeb
-      </span>
+      {showText && (
+        <span className={`text-[28px] font-extrabold tracking-tighter ${dark ? 'text-white' : 'text-[#1E3A5F]'}`}>
+          MedixWeb
+        </span>
+      )}
     </div>
   );
 };
